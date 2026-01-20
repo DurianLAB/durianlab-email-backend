@@ -1,15 +1,26 @@
 const nodemailer = require('nodemailer');
 
-// Configure email transporter
+// Configure email transporter for Zoho Mail
 const transporter = nodemailer.createTransporter({
-  service: 'gmail', // or your email provider
+  host: 'smtp.zoho.com',
+  port: 465,
+  secure: true, // use SSL
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS
   }
 });
 
-// Alternative: SendGrid
+// Alternative: Gmail (commented out)
+// const transporter = nodemailer.createTransporter({
+//   service: 'gmail',
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS
+//   }
+// });
+
+// Alternative: SendGrid (commented out)
 // const transporter = nodemailer.createTransporter({
 //   host: 'smtp.sendgrid.net',
 //   port: 587,
