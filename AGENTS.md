@@ -57,8 +57,8 @@ curl -X POST http://localhost:3000/api/contact \
 
 **Verification Steps**:
 ```bash
-# Unit test (requires test implementation)
-npm test -- --testNamePattern="sendContactEmail"
+# Unit tests implemented in src/__tests__/emailController.test.js
+npm test -- --testNamePattern="Email Controller"
 
 # Integration test via API (see Contact Routes)
 ```
@@ -72,8 +72,8 @@ npm test -- --testNamePattern="sendContactEmail"
 
 **Verification Steps**:
 ```bash
-# Unit test
-npm test -- --testNamePattern="validateContact"
+# Unit tests implemented in src/__tests__/validation.test.js
+npm test -- --testNamePattern="Validation Middleware"
 
 # API test with invalid inputs (see Contact Routes)
 ```
