@@ -132,11 +132,45 @@ make clean
 
 ## Testing
 
+### Unit Tests
 ```bash
 # Run unit tests
 make test
+```
 
-# Run with Docker
+### Manual API Testing
+
+1. **Setup environment**:
+   ```bash
+   cp .env.example .env
+   # Fill in EMAIL_USER and EMAIL_PASS in .env
+   ```
+
+2. **Start the server**:
+   ```bash
+   make dev
+   ```
+
+3. **Test contact endpoint**:
+   ```bash
+   curl -X POST http://localhost:3000/api/contact \
+     -H "Content-Type: application/json" \
+     -d '{"name":"Test User","email":"test@example.com","message":"This is a test message"}'
+   ```
+
+4. **Expected response**:
+   ```json
+   {
+     "success": true,
+     "message": "Email sent successfully"
+   }
+   ```
+
+5. **Verify email delivery**: Check the admin email inbox for the test message.
+
+### Docker Testing
+```bash
+# Run with Docker Compose
 make docker-compose-up
 ```
 
