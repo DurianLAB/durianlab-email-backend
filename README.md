@@ -16,7 +16,7 @@ A container-first Node.js microservice for handling contact form submissions and
 ### Prerequisites
 - Node.js 18+
 - Docker & Docker Compose
-- Gmail account (or SendGrid account)
+- Zoho Mail account (or SendGrid account)
 
 ### Setup
 
@@ -75,9 +75,9 @@ Health check endpoint.
 
 ### Email Providers
 
-#### Gmail (Default)
-- Set `EMAIL_USER` and `EMAIL_PASS` (use app password)
-- Enable 2FA on Gmail account
+#### Zoho Mail (Default)
+- Set `EMAIL_USER` and `EMAIL_PASS` (use app password if 2FA enabled)
+- Zoho SMTP: smtp.zoho.com, port 465 (SSL)
 
 #### SendGrid
 - Uncomment SendGrid config in `emailController.js`
